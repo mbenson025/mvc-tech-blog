@@ -1,7 +1,7 @@
 # MVC Tech Blog
 
-![GitHub](https://img.shields.io/github/license/mbenson025/tech-blog)
-![Lines of code](https://img.shields.io/tokei/lines/github/mbenson025/tech-blog)
+![GitHub](https://img.shields.io/github/license/mbenson025/mvc-tech-blog)
+![Lines of code](https://img.shields.io/tokei/lines/github/mbenson025/mvc-tech-blog)
 
 <br>
 
