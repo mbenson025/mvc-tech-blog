@@ -24,6 +24,7 @@ const sess = {
 
 exp.use(session(sess));
 
+// identify the template engine being used
 exp.engine('handlebars', hbs.engine);
 exp.set('view engine', 'handlebars');
 
