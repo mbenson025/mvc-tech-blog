@@ -11,8 +11,9 @@ const helpers = require('./utils/helpers');
 const exp = express();
 const PORT = process.env.PORT || 3001;
 
+//set up sessions with cookies
 const sess = {
-  secret: '',
+  secret: 'secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -25,6 +26,9 @@ exp.use(session(sess));
 
 exp.engine('handlebars', hbs.engine);
 exp.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 exp.use(express.static(path.join(__dirname, 'public')));
 
 exp.use(routes);
