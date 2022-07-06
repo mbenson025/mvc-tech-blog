@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mbenson025/mvc-tech-blog.git"
+    "url": "https://github.com/mbenson025/mvc-tech-blog.git"
   },
   "author": "mason",
   "license": "MIT",

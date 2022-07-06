@@ -1,7 +1,8 @@
 # MVC Tech Blog
 
 ![GitHub](https://img.shields.io/github/license/mbenson025/mvc-tech-blog)
-![Lines of code](https://img.shields.io/tokei/lines/github/mbenson025/mvc-tech-blog)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/mbenson025/mvc-tech-blog)
+![GitHub last commit](https://img.shields.io/github/last-commit/mbenson025/mvc-tech-blog)
 
 <br>
 
@@ -20,6 +21,7 @@
 ## Description
 
 CMS(Content Management System) style blog for developers
+<br>
 <br>
 
 ## Installation
@@ -70,11 +72,15 @@ node server
 
 ## Technologies Used
 
-- [Node.js](https://nodejs.org/en/)
-- [mysql2](https://www.npmjs.com/package/mysql2)
-- [express](https://expressjs.com/)
-- [sequelize](https://sequelize.org/)
+- [node.js](https://nodejs.org/en/)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+- [express](https://expressjs.com/)
+- [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+- [express-session](https://www.npmjs.com/package/express-session)
+- [mysql2](https://www.npmjs.com/package/mysql2)
+- [sequelize](https://sequelize.org/)
 
 <br>
 
