@@ -3,9 +3,8 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model {
-  //compare entered password to bcrypt pw
-  checkPassword(userPass) {
-    return bcrypt.compareSync(userPass, this.password);
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
@@ -17,14 +16,13 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      //email cannot be a duplicate
       unique: true,
       validate: {
         isEmail: true,
@@ -33,23 +31,23 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      //confirm pw is 6 chars long
       validate: {
-        len: [6],
+        len: [1],
       },
     },
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
-        //hash encrypts pw by converting it to a unique string of chars unique to the entered text
-        newUserData.password = await bcrypt.hash(
-          //salting adds a random 10 characters to make stored pw more secure
-          newUserData.password,
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
           10
         );
-        //after conversion, hashed/salted pw is ready to store
-        return newUserData;
+        return updatedUserData;
       },
     },
     sequelize,
