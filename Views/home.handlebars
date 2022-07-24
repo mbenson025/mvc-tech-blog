@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" href="./css/map.css" />
-
 <header class="bg-white shadow">
   <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-bold text-gray-900">Tech Blog</h1>
@@ -12,20 +10,19 @@
               {{#each posts}}
         <div class="post">
           <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl job-title" value = "job_title">{{title}}</h3>
-          <p class = "ml-4 job-employer text-base text-indigo-600 font-semibold tracking-wide" value= "employer_name">{{content}}</p>
+          <p class = "ml-4 job-employer text-base text-indigo-600 font-semibold tracking-wide" value= "employer_name">{{post_content}}</p>
           <ul>
             <li class = "ml-4 job-city" value = "job_city">{{user_id}}</li>
-            <li class = "ml-4 job-state" value = "job_state"></li>
+            <li class = "ml-4 job-state" value = "job_state">{{created_at}}</li>
           </ul>
           <div class="ml-4 tech">
+            
             <small></span></small>
           </div>
         </div>
       {{else}}
       <p class="mt-2 ml-2 text-2xl leading-8 tracking-tight text-gray-900 sm:text-2xl">No posts to display</p>
       {{/each}}
-    </div>
-  </div>
   <!-- /End replace -->
 </div>
 {{!-- <script src="./js/"></script> --}}
