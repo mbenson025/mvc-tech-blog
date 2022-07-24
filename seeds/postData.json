@@ -1,15 +1,15 @@
 [
   {
 
-    "title": "title test1",
-    "post_content": "post content test1",
+    "title": "Post Title1",
+    "post_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     "user_id": 3
 
   },
     {
 
-    "title": "title test2",
-    "post_content": "post content test2",
+    "title": "Post Title2",
+    "post_content": "Sed ullamcorper morbi tincidunt ornare massa eget egestas purus",
     "user_id": 2
 
   }
