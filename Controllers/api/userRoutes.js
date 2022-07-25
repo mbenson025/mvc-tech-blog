@@ -57,17 +57,4 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.put('/quiz/:id', async (req, res) => {
-  User.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-    quizTaken: req.body.quizTaken,
-    quizResults: req.body.quizResults,
-  });
-
-  console.log('200');
-  res.status(200).json(req.body);
-});
-
 module.exports = router;

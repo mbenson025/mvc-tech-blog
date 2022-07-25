@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const homeData = await Post.findAll({
-      attributes: ['user_id', 'title', 'post_content'],
+      attributes: ['id', 'user_id', 'title', 'post_content'],
       include: [
         {
           model: User,
@@ -33,42 +33,42 @@ router.get('/', async (req, res) => {
 });
 
 //-------------individual posts--------------------
-router.get('/post/:id', (req, res) => res.render('post'));
-// router.get('/post/:id', async (req, res) => {
-//   try {
-//     const postData = await Post.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//         // {
-//         //   model: Comment,
-//         //   attributes: [
-//         //     'id',
-//         //     'comment_content',
-//         //     'post_id',
-//         //     'user_id',
-//         //     // 'created_at',
-//         //   ],
-//         //   include: {
-//         //     model: User,
-//         //     attributes: ['username'],
-//         //   },
-//         // },
-//       ],
-//     });
+// router.get('/post/:id', (req, res) => res.render('post'));
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'comment_content',
+            'post_id',
+            'user_id',
+            // 'created_at',
+          ],
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
+    });
 
-//     const post = postData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
-//     res.render('post', {
-//       ...post,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('post', {
+      ...post,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //-------------individual posts--------------------
 
 router.get('/login', (req, res) => {
