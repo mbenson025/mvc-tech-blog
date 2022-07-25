@@ -1,13 +1,14 @@
 <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
   <div class="px-4 py-6 sm:px-0">
     <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
-              {{#each posts}}
+              {{#each posts as |post|}}
         <div class="post">
           <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl job-title" value = "job_title">{{title}}</h3>
           <p class = "ml-4 job-employer text-base text-indigo-600 font-semibold tracking-wide" value= "employer_name">{{post_content}}</p>
           <ul>
-            <li class = "ml-4 job-city" value = "job_city">{{user_id}}</li>
-            <li class = "ml-4 job-state" value = "job_state">{{created_at}}</li>
+            <li class = "ml-4 job-city" value = "user-id">{{user_id}}</li>
+            {{!-- <li class = "ml-4 job-state" value = "job_state">{{created_at}}</li> --}}
+              <a href="post/{{user_id}}">{{title}}</a>
           </ul>
           <div class="ml-4 tech">
             

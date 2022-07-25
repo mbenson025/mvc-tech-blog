@@ -1,0 +1,41 @@
+<div class="card post">
+  <div class="card-body">
+    <div class="card-title d-flex justify-content-between flex-row">
+      <h2 class="column">{{title}}</h2>
+      <p class="card-subtitle">Posted by  <br> on {{created_at}}</p>
+    </div>
+    <p class="card-body">
+      {{post_content}}
+    </p>
+  </div>
+</div>
+
+{{#each comments}}
+<div class="card comment">
+  <section class="card-body">
+    <div class="meta text-muted">
+       commented on {{created_at}}
+    </div>
+    <div class="text">
+      {{comment_content}}
+    </div>
+  </section>
+</div>
+{{/each}}
+
+{{#if loggedIn}}
+<div class="container">
+  <form class="comment-form col-md-6">
+    <h4>Post a comment</h4>
+    <div class="mb-3">
+      <textarea name="comment-body" id="comment-text"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Post Comment</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/comment.js"></script>
+{{/if}}
