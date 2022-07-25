@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const commentInfo = await Comment.findAll({
       include: {
         model: User.Comment,
-        attributes: ['username'],
+        attributes: ['id', 'username'],
       },
     });
 

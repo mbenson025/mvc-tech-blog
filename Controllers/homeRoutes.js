@@ -33,10 +33,10 @@ router.get('/', async (req, res) => {
 });
 
 //-------------individual posts--------------------
-// router.get('/post/:id', (req, res) => res.render('post'));
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
+      attributes: ['id', 'user_id', 'title', 'post_content', 'created_at'],
       include: [
         {
           model: User,
@@ -49,7 +49,7 @@ router.get('/post/:id', async (req, res) => {
             'comment_content',
             'post_id',
             'user_id',
-            // 'created_at',
+            'created_at',
           ],
           include: {
             model: User,
@@ -69,7 +69,7 @@ router.get('/post/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-//-------------individual posts--------------------
+//-------------individual posts end--------------------
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
