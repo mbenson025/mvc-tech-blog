@@ -1,35 +1,33 @@
 //comment route based on project route from mvc mini proj(act 28)
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-  console.log(req, res);
-  try {
-    const commentInfo = await Comment.findAll({
-      include: {
-        model: User.Comment,
-        attributes: ['id', 'username'],
-      },
+router.get('/', withAuth, async (req, res) => {
+  // console.log(req, res);
+  Comment.findAll({
+    include: {
+      model: User,
+      attributes: ['id', 'username'],
+    },
+  })
+    .then((cData) => res.json(cData))
+    .catch((err) => {
+      res.status(400).json(err);
     });
-
-    res.status(200).json(commentInfo);
-  } catch (err) {
-    res.status(400).json(err);
-  }
 });
 
 router.post('/', withAuth, async (req, res) => {
-  try {
-    const newComment = await Comment.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+  Comment.create({
+    comment_content: req.body.commentContent,
+    post_id: req.body.postId,
+    user_id: req.session.user_id,
+  })
+    .then((cData) => res.json(cData))
 
-    res.status(200).json(newComment);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+    .catch((err) => {
+      res.status(400).json(err);
+    });
 });
 
 router.delete('/:id', async (req, res) => {

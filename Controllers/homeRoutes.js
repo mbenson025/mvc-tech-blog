@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 });
 
 //-------------individual posts--------------------
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       attributes: ['id', 'user_id', 'title', 'post_content', 'created_at'],
@@ -63,7 +63,7 @@ router.get('/post/:id', async (req, res) => {
 
     res.render('post', {
       ...post,
-      logged_in: req.session.logged_in,
+      loggedIn: true,
     });
   } catch (err) {
     res.status(500).json(err);

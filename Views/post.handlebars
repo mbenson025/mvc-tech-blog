@@ -1,7 +1,7 @@
 <div class="card post">
   <div class="card-body">
     <div class="card-title d-flex justify-content-between flex-row">
-      <h2 class="column">{{title}}</h2>
+      <h2 class="column" id="comment-id" data-id="{{id}}">{{title}} {{id}}</h2>
       <p class="card-subtitle">Posted by {{user_id}} {{user.username}}  <br> on {{format_date created_at}}</p>
     </div>
     <p class="card-body">
@@ -14,7 +14,7 @@
 <div class="card comment">
   <section class="card-body">
     <div class="meta text-muted">
-       commented on {{format_date created_at}}
+      commented by {{user.username}} on {{format_date created_at}}
     </div>
     <div class="text">
       {{comment_content}}
@@ -28,11 +28,11 @@
   <form class="comment-form col-md-6">
     <h4>Post a comment</h4>
     <div class="mb-3">
-      <textarea name="comment-body" id="comment-text"></textarea>
+      <textarea name="comment-body" id="comment-content"></textarea>
     </div>
 
     <div class="mb-3">
-      <button type="submit" class="btn btn-primary">Post Comment</button>
+      <button type="submit" class="btn btn-dark">Post Comment</button>
     </div>
   </form>
 </div>
