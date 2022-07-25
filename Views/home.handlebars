@@ -3,13 +3,11 @@
     <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
               {{#each posts as |post|}}
         <div class="post">
-          <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl job-title" value = "job_title">{{title}}</h3>
-          <p class = "ml-4 job-employer text-base text-indigo-600 font-semibold tracking-wide" value= "employer_name">{{post_content}}</p>
-          <ul>
-            <li class = "ml-4 job-city" value = "user-id">{{user_id}}</li>
-            {{!-- <li class = "ml-4 job-state" value = "job_state">{{created_at}}</li> --}}
-              <a href="post/{{id}}">{{title}}</a>
-          </ul>
+          <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title">{{title}}</h3>
+          <p>by {{user.username}} on {{format_date created_at}}</p>
+          <p class = "ml-4 post-employer text-base text-indigo-600 font-semibold tracking-wide" value= "post-content">{{post_content}}</p>
+              <a href="post/{{id}}">comments: {{comments.length}}</a>
+          
           <div class="ml-4 tech">
             
             <small></span></small>
@@ -18,6 +16,5 @@
       {{else}}
       <p class="mt-2 ml-2 text-2xl leading-8 tracking-tight text-gray-900 sm:text-2xl">No posts to display</p>
       {{/each}}
-  <!-- /End replace -->
 </div>
 {{!-- <script src="./js/"></script> --}}
