@@ -43,4 +43,29 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+//edit posts
+router.put('/:id', withAuth, (req, res) => {
+  Post.update(
+    {
+      title: req.body.title,
+      post_content: req.body.post_content,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((pData) => {
+      if (!pData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(pData);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
