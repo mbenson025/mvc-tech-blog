@@ -29,6 +29,18 @@ async function editFormHandler(e) {
       alert(response.statusText);
     }
   }
+
+  if (btnId == 'delete-btn') {
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert(response.statusText);
+    }
+  }
 }
 
 document

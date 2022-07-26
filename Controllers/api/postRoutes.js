@@ -68,4 +68,23 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+router.delete('/:id', withAuth, (req, res) => {
+  Post.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((pData) => {
+      if (!pData) {
+        res.status(404).json({ message: 'Post with this id not found' });
+        return;
+      }
+      res.json(pData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
