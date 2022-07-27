@@ -1,10 +1,12 @@
 # MVC Tech Blog
 
 ![GitHub](https://img.shields.io/github/license/mbenson025/mvc-tech-blog)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/mbenson025/mvc-tech-blog)
-![GitHub last commit](https://img.shields.io/github/last-commit/mbenson025/mvc-tech-blog)
+![GitHub language count](https://img.shields.io/github/languages/count/mbenson025/mvc-tech-blog)
+![GitHub top language](https://img.shields.io/github/languages/top/mbenson025/mvc-tech-blog)
 
 <br>
+<a href="https://mvc-tech-blog-mb.herokuapp.com/">Heroku Deployment</a>
+<br><br>
 
 ## Table of Contents
 

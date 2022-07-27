@@ -4,7 +4,6 @@ const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-  // console.log(req, res);
   Comment.findAll({
     include: {
       model: User,
@@ -35,12 +34,11 @@ router.delete('/:id', async (req, res) => {
     const commentData = await Comment.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
     if (!commentData) {
-      res.status(404).json({ message: 'No comment found with this id!' });
+      res.status(404).json({ message: 'No comment found with this id' });
       return;
     }
 

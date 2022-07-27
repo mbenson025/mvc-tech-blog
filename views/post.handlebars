@@ -20,7 +20,7 @@
       {{comment_content}}
     </div>
     {{#if (compare user_id ../user)}}
-    <button class="btn btn-danger delete-btn" id="{{comment.id}}">Delete Comment</button>
+    <button class="btn btn-danger delete-btn" id="delete-btn" data-id="{{comment.id}}">Delete Comment</button>
     {{/if}}
   </section>
 </div>
@@ -41,4 +41,5 @@
 </div>
 
 <script src="/js/comment.js"></script>
+<script src="/js/destroy.js"></script>
 {{/if}}
