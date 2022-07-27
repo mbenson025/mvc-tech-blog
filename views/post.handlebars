@@ -1,7 +1,7 @@
 <div class="card post">
   <div class="card-body">
     <div class="card-title d-flex justify-content-between flex-row">
-      <h2 class="column" id="comment-id" data-id="{{id}}">{{title}} {{id}}</h2>
+      <h2 class="column" id="comment-id" data-id="{{id}}">{{title}} {{id}} </h2>
       <p class="card-subtitle">Posted by {{user_id}} {{user.username}}  <br> on {{format_date created_at}}</p>
     </div>
     <p class="card-body">
@@ -10,15 +10,18 @@
   </div>
 </div>
 
-{{#each comments}}
+{{#each comments as |comment|}}
 <div class="card comment">
   <section class="card-body">
     <div class="meta text-muted">
-      commented by {{user.username}} on {{format_date created_at}}
+      commented by {{user.username}} on {{format_date created_at}} 
     </div>
     <div class="text">
       {{comment_content}}
     </div>
+    {{#if (compare user_id ../user)}}
+    <button class="btn btn-danger delete-btn" id="{{comment.id}}">Delete Comment</button>
+    {{/if}}
   </section>
 </div>
 {{/each}}
