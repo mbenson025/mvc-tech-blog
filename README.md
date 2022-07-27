@@ -15,6 +15,7 @@
 - [Usage](#usage)
 - [Demo](#demo)
 - [Technologies Used](#technologies-used)
+- [Credits](#credits)
 - [Questions](#questions)
 - [License](#license)
 
@@ -85,6 +86,13 @@ node server
 - [sequelize](https://sequelize.org/)
 
 <br>
+
+## Credits
+
+Image sources:
+
+- https://www.iiot-world.com/industrial-iot/connected-industry/enabling-a-new-era-of-industrial-iot-with-free-use-wireless-spectrum/
+- https://unsplash.com/s/photos/tech
 
 ## Questions
 
