@@ -1,20 +1,22 @@
-<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-  <div class="px-4 py-6 sm:px-0">
-    <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
-              {{#each posts as |post|}}
-        <div class="post">
-          <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title">{{title}}</h3>
-          <p>by {{user.username}} on {{format_date created_at}}</p>
-          <p class = "ml-4 post-employer text-base text-indigo-600 font-semibold tracking-wide" value= "post-content">{{post_content}}</p>
-              <a href="post/{{id}}">comments: {{comments.length}}</a>
-          
-          <div class="ml-4 tech">
+<section class="vh-100">
+  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 py-6 sm:px-0">
+      <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
+                {{#each posts as |post|}}
+          <div class="post">
+            <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title">{{title}}</h3>
+            <p>by {{user.username}} on {{format_date created_at}}</p>
+            <p class = "ml-4 post-employer text-base text-indigo-600 font-semibold tracking-wide" value= "post-content">{{post_content}}</p>
+                <a href="post/{{id}}">comments: {{comments.length}}</a>
             
-            <small></span></small>
+            <div class="ml-4 tech">
+              
+              <small></span></small>
+            </div>
           </div>
-        </div>
-      {{else}}
-      <p class="mt-2 ml-2 text-2xl leading-8 tracking-tight text-gray-900 sm:text-2xl">No posts to display</p>
-      {{/each}}
-</div>
+        {{else}}
+        <p class="mt-2 ml-2 text-2xl leading-8 tracking-tight text-gray-900 sm:text-2xl">No posts to display</p>
+        {{/each}}
+  </div>
+</section>
 {{!-- <script src="./js/"></script> --}}

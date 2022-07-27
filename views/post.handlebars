@@ -1,45 +1,47 @@
-<div class="card post">
-  <div class="card-body">
-    <div class="card-title d-flex justify-content-between flex-row">
-      <h2 class="column" id="comment-id" data-id="{{id}}">{{title}} {{id}} </h2>
-      <p class="card-subtitle">Posted by {{user_id}} {{user.username}}  <br> on {{format_date created_at}}</p>
+<section class="vh-100">
+  <div class="card post">
+    <div class="card-body">
+      <div class="card-title d-flex justify-content-between flex-row">
+        <h2 class="column" id="comment-id" data-id="{{id}}">{{title}} {{id}} </h2>
+        <p class="card-subtitle">Posted by {{user_id}} {{user.username}}  <br> on {{format_date created_at}}</p>
+      </div>
+      <p class="card-body">
+        {{post_content}}
+      </p>
     </div>
-    <p class="card-body">
-      {{post_content}}
-    </p>
   </div>
-</div>
 
-{{#each comments as |comment|}}
-<div class="card comment">
-  <section class="card-body">
-    <div class="meta text-muted">
-      commented by {{user.username}} on {{format_date created_at}} 
-    </div>
-    <div class="text">
-      {{comment_content}}
-    </div>
-    {{#if (compare user_id ../user)}}
-    <button class="btn btn-danger delete-btn" id="delete-btn" data-id="{{comment.id}}">Delete Comment</button>
-    {{/if}}
-  </section>
-</div>
-{{/each}}
+  {{#each comments as |comment|}}
+  <div class="card comment">
+    <section class="card-body">
+      <div class="meta text-muted">
+        commented by {{user.username}} on {{format_date created_at}} 
+      </div>
+      <div class="text">
+        {{comment_content}}
+      </div>
+      {{#if (compare user_id ../user)}}
+      <button class="btn btn-danger delete-btn" id="delete-btn" data-id="{{comment.id}}">Delete Comment</button>
+      {{/if}}
+    </section>
+  </div>
+  {{/each}}
 
-{{#if loggedIn}}
-<div class="container">
-  <form class="comment-form col-md-6">
-    <h4>Post a comment</h4>
-    <div class="mb-3">
-      <textarea name="comment-body" id="comment-content"></textarea>
-    </div>
+  {{#if loggedIn}}
+  <div class="container">
+    <form class="comment-form col-md-6">
+      <h4>Post a comment</h4>
+      <div class="mb-3">
+        <textarea name="comment-body" id="comment-content"></textarea>
+      </div>
 
-    <div class="mb-3">
-      <button type="submit" class="btn btn-dark">Post Comment</button>
-    </div>
-  </form>
-</div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-dark">Post Comment</button>
+      </div>
+    </form>
+  </div>
+{{/if}}
 
 <script src="/js/comment.js"></script>
 <script src="/js/destroy.js"></script>
-{{/if}}
+</section>

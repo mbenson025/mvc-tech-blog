@@ -1,20 +1,22 @@
-<div>  
-  <h2>
-    Edit Post {{post.id}}
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <input name="post-title" type="text" id="post-title-id" value="{{post.title}}" />      
-    </div>
-    <div> Posted on {{format_date post.created_at}}</div>
-    <div id="post-id" data-id="{{post.id}}" ></div>
-    <div>
-      <label for="post-content">Post</label>
-      <textarea id="post-content" name="post-content">{{post.post_content}}</textarea>
-    </div>
-    <button type="submit" class="btn-secondary" id="save-btn">Save Changes</button>
-    <button type="button" class="delete-post-btn btn-secondary" id="delete-btn">Delete Post</button>
-  </form>
-</div>
+<section class="vh-100">
+  <div>  
+    <h2>
+      Edit Post {{post.id}}
+    </h2>
+    <form class="edit-post-form">
+      <div>
+        <input name="post-title" type="text" id="post-title-id" value="{{post.title}}" />      
+      </div>
+      <div> Posted on {{format_date post.created_at}}</div>
+      <div id="post-id" data-id="{{post.id}}" ></div>
+      <div>
+        <label for="post-content">Post</label>
+        <textarea id="post-content" name="post-content">{{post.post_content}}</textarea>
+      </div>
+      <button type="submit" class="btn-secondary" id="save-btn">Save Changes</button>
+      <button type="button" class="delete-post-btn btn-secondary" id="delete-btn">Delete Post</button>
+    </form>
+  </div>
+</section>
 
 <script src="/js/edit.js"></script>
