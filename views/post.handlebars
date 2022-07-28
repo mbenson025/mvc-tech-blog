@@ -13,7 +13,7 @@
 
   {{#each comments as |comment|}}
   <div class="card comment">
-    <section class="card-body">
+    <div class="card-body">
       <div class="meta text-muted">
         commented by {{user.username}} on {{format_date created_at}} 
       </div>
@@ -23,7 +23,7 @@
       {{#if (compare user_id ../user)}}
       <button class="btn btn-danger delete-btn" id="delete-btn" data-id="{{comment.id}}">Delete Comment</button>
       {{/if}}
-    </section>
+    </div>
   </div>
   {{/each}}
 

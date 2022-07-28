@@ -13,7 +13,7 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo](#demo)
+- [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Credits](#credits)
 - [Questions](#questions)
@@ -23,7 +23,7 @@
 
 ## Description
 
-CMS(Content Management System) style blog for developers
+CMS(Content Management System) style blog for developers based on the MVC(Model View Controller) paradigm.
 <br>
 <br>
 
@@ -37,7 +37,7 @@ CMS(Content Management System) style blog for developers
 
 <br>
 
-This application can be used by entering the following commands-
+This application can be used locally by entering the following commands-
 
 <br>
 
@@ -57,25 +57,31 @@ node server
 
 <br>
 
-## Demo
+Optional- Run the seed file for starter content
+
+```
+run npm seed
+```
 
 <br>
 
-<!-- [Full Video Demo](https://drive.google.com/file/d/1A07wRr_sdNGFyZE6y547SnCxX1iEwOGt/view) -->
+## Screenshots
 
 <br>
-
-### Demo gifs:
-
+<img src="./public/Assets/logintechblog.jpg" alt="login page" title="Login Page">
 <br>
-
 <br>
-
+<img src="./public/Assets/createaposttechblog.jpg" alt="post page" title="Create a Post">
+<br>
+<br>
+<img src="./public/Assets/hometechblog.jpg" alt="home page" title="Blog Home Page">
+<br>
 <br>
 
 ## Technologies Used
 
 - [node.js](https://nodejs.org/en/)
+- [nodemon](https://www.npmjs.com/package/nodemon)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 - [dotenv](https://www.npmjs.com/package/dotenv)
@@ -93,6 +99,8 @@ Image sources:
 
 - https://www.iiot-world.com/industrial-iot/connected-industry/enabling-a-new-era-of-industrial-iot-with-free-use-wireless-spectrum/
 - https://unsplash.com/s/photos/tech
+
+<br>
 
 ## Questions
 
