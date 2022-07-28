@@ -68,13 +68,13 @@ run npm seed
 ## Screenshots
 
 <br>
-<img src="/public/Assets/logintechblog.jpg" alt="login page" title="Login Page">
+<img src="/public/assets/logintechblog.jpg" alt="login page" title="Login Page">
 <br>
 <br>
-<img src="/public/Assets/createaposttechblog.jpg" alt="post page" title="Create a Post">
+<img src="/public/assets/createaposttechblog.jpg" alt="post page" title="Create a Post">
 <br>
 <br>
-<img src="/public/Assets/hometechblog.jpg" alt="home page" title="Blog Home Page">
+<img src="/public/assets/hometechblog.jpg" alt="home page" title="Blog Home Page">
 <br>
 <br>
 
