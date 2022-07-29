@@ -2,9 +2,11 @@
   <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
     <div class="px-4 py-6 sm:px-0">
       <div class="border-4 border-dashed border-gray-200 rounded-lg h-full">
+        <h2 style="color:white">All Posts</h2>
+        <br><br>
                 {{#each posts as |post|}}
           <div class="post">
-            <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title">{{title}}</h3>
+            <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title"><a href="post/{{id}}">{{title}}</a></h3>
             <p>by {{user.username}} on {{format_date created_at}}</p>
             <p class = "ml-4 post-employer text-base text-indigo-600 font-semibold tracking-wide" value= "post-content">{{post_content}}</p>
                 <a href="post/{{id}}">comments: {{comments.length}}</a>

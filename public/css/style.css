@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+img {
+  height: auto;
+  max-width: 100%
+}
+
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
@@ -45,8 +50,8 @@ a:hover {
 }
 
 .btn:hover {
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: #0C0525;
+  border: 1px solid #0C0525;
   color: #fff;
 }
 

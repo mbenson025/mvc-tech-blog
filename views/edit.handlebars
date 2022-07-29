@@ -1,20 +1,23 @@
+<link rel="stylesheet" href="/css/style.css">
 <section class="vh-100">
   <div>  
-    <h2>
-      Edit Post {{post.id}}
+    <h2 style="color:white">
+      Edit Post
     </h2>
     <form class="edit-post-form">
+      <div class="form-wrap">
       <div>
-        <input name="post-title" type="text" id="post-title-id" value="{{post.title}}" />      
+        <input name="post-title" class="input-box"type="text" id="post-title-id" value="{{post.title}}" />      
       </div>
       <div> Posted on {{format_date post.created_at}}</div>
       <div id="post-id" data-id="{{post.id}}" ></div>
       <div>
         <label for="post-content">Post</label>
-        <textarea id="post-content" name="post-content">{{post.post_content}}</textarea>
+        <textarea id="post-content" name="post-content" class="input-box">{{post.post_content}}</textarea>
       </div>
       <button type="submit" class="btn-secondary" id="save-btn">Save Changes</button>
       <button type="button" class="delete-post-btn btn-secondary" id="delete-btn">Delete Post</button>
+      </div>
     </form>
   </div>
 </section>

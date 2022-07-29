@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="/css/style.css">
 <section class="vh-100">
   <div class="card post">
     <div class="card-body">
       <div class="card-title d-flex justify-content-between flex-row">
-        <h2 class="column" id="comment-id" data-id="{{id}}">{{title}} {{id}} </h2>
+        <h2 class="column" id="comment-id" data-id="{{id}}">{{title}}</h2>
         <p class="card-subtitle">Posted by {{user_id}} {{user.username}}  <br> on {{format_date created_at}}</p>
       </div>
       <p class="card-body">
@@ -29,10 +30,10 @@
 
   {{#if loggedIn}}
   <div class="container">
-    <form class="comment-form col-md-6">
-      <h4>Post a comment</h4>
+    <form class="comment-form col-md-5">
+      <h4 style="color:white">Post a comment</h4>
       <div class="mb-3">
-        <textarea name="comment-body" id="comment-content"></textarea>
+        <textarea name="comment-body" id="comment-content" class="input-box"></textarea>
       </div>
 
       <div class="mb-3">

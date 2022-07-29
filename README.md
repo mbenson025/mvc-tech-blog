@@ -68,16 +68,18 @@ run npm seed
 ## Screenshots
 
 <br>
-<img src="/public/assets/logintechblog.jpg" alt="login page" title="Login Page">
+<img src="/public/assets/login.jpg" alt="login page" title="Login Page">
 <br>
 <br>
-<img src="/public/assets/createaposttechblog.jpg" alt="post page" title="Create a Post">
+<img src="/public/assets/home.jpg" alt="home page" title="Blog Home Page">
 <br>
 <br>
-<img src="/public/assets/hometechblog.jpg" alt="home page" title="Blog Home Page">
+<img src="/public/assets/dash.jpg" alt="dashboard page" title="Dashboard Page">
 <br>
 <br>
-
+<img src="/public/assets/edit.jpg" alt="individual post page" title="Individual Content">
+<br>
+<br>
 ## Technologies Used
 
 - [node.js](https://nodejs.org/en/)

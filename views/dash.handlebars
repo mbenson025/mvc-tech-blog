@@ -14,15 +14,17 @@
             <button type="submit" class="btn btn-secondary">Create</button>
         </div>
     </form>
+    <br>
 
     {{#if posts.length}}
 
     <h2 style="color:white">Your Posts</h2>
+    <br><br>
     <ol>
         {{#each posts as |post|}}
         <li>
             <div class="post">
-        <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title" style="color:white">{{title}}</h3>
+        <h3 class = "ml-4 mt-4 ext-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl post-title" value = "post_title"><a href="post/{{id}}">{{title}}</a></h3>
         <p style="color:white">by {{user.username}} on {{format_date created_at}}</p>
         <p class = "ml-4 post-employer text-base text-indigo-600 font-semibold tracking-wide" value= "post-content" style="color:white">{{post_content}}</p>
             <a href="post/{{id}}">comments: {{comments.length}}</a>
@@ -30,6 +32,7 @@
         </div>
             <a href="/dashboard/edit/{{post.id}}" class="post-edit">Edit Post</a>
         </li>
+        <br><br>
         {{/each}}
     </ol>
 
