@@ -23,7 +23,7 @@
 
 ## Description
 
-CMS(Content Management System) style blog for developers based on the MVC(Model View Controller) paradigm.
+CMS(Content Management System) style blog for developers based on the MVC(Model View Controller) architectural pattern.
 <br>
 <br>
 

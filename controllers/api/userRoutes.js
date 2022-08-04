@@ -16,6 +16,28 @@ router.post('/', async (req, res) => {
   }
 });
 
+//signup
+router.post('/', (req, res) => {
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+  })
+    .then((dbSignUp) => {
+      req.session.save(() => {
+        req.session.user_id = dbSignUp.id;
+        req.session.username = dbSignUp.username;
+        req.session.loggedIn = true;
+
+        res.json(dbUserData);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
