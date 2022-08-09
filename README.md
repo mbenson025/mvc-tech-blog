@@ -80,6 +80,7 @@ run npm seed
 <img src="/public/assets/edit.jpg" alt="individual post page" title="Individual Content">
 <br>
 <br>
+
 ## Technologies Used
 
 - [node.js](https://nodejs.org/en/)
